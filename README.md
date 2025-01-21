@@ -1,7 +1,7 @@
 # LDP_Frequency_Protocols
 This repository lists our implementations of LDP frequency protocols.
 
-Related Paper: Further Study on Frequency Estimation under Local Differential Privacy
+Related Paper: 'Further Study on Frequency Estimation under Local Differential Privacy' accepted by USENIX Security 2025
 
 ## Code
 - main.py: main entrance for experiment (with multiprocessing to save time and memory) and save results in the results folder
