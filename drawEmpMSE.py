@@ -47,7 +47,8 @@ def draw_legend():
     for i in run_protocol_list:
         ax.plot(range(2), lab.randn(2), style_list[i], label=i, linewidth=1, markerfacecolor='none', markersize=5)
 
-    figlegend.legend(ax.get_legend_handles_labels()[0], ax.get_legend_handles_labels()[1], 'center', ncol=7, fontsize=6)
+    figlegend.legend(ax.get_legend_handles_labels()[0], ax.get_legend_handles_labels()[1], loc='center', ncol=7,
+                     fontsize=6)
     fig.show()
     figlegend.show()
     figlegend.savefig('draw/legend.eps', bbox_inches='tight')

@@ -38,4 +38,4 @@ NumPy 2.0 is a major release and I find there are some compatibility issues betw
      - run_epsilon_range: default from 1 to 5 with step size 0.25
 2. run main.py
 3. run runtime.py - Runtime and memory costs are linearly related to data size and domain size, so the taxi dataset requires about 36 times as much runtime and RAM as the synthetic dataset. For quick verification or if memory is limited, users can run this experiment only on the synthetic datasets. The range of run_d_range can also be reduced to speed up the experiment and reduce the RAM requirements.
-4. run each drawxx.py to draw the results
+4. run each drawxx.py to draw the results - the parameters in the drawxx.py should be the same as those in the main.py and runtime.py.
