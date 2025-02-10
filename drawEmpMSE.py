@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import csv
 import matplotlib.pylab as lab
+import os
 
 # for PDF backend
 plt.rcParams['pdf.fonttype'] = 42
@@ -59,6 +60,9 @@ if __name__ == '__main__':
 
     style_list = {"GRR": "C0+-", "OUE": "C1s-", "RUE": "C2^-", "OLH": "C31-", "RLH": "C42-", "SS": "C5*-",
                   "RWS": "C6o-"}
+
+    if not os.path.exists("draw"):
+        os.makedirs("draw")
 
     # draw the legend for all 4 figures
     draw_legend()

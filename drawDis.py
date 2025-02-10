@@ -2,6 +2,7 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 import pyarrow.parquet as pq
+import os
 
 # for PDF backend
 plt.rcParams['pdf.fonttype'] = 42
@@ -86,6 +87,9 @@ if __name__ == '__main__':
     print("start")
     # experimental parameters
     run_d = 128
+
+    if not os.path.exists("draw"):
+        os.makedirs("draw")
 
     # get experimental dataset
     normalized_taxi = read_taxi()

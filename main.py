@@ -129,8 +129,8 @@ def run_protocol(data_list, data_list_sum, epsilon, d, protocol_name, data_name,
         # protocol_list2 multiprocessing in both perturbation and aggregation
         protocol_list2 = np.array(["OLH", "RLH", "RWS"])
 
-        if not os.path.exists(protocol_name):
-            os.makedirs(protocol_name)
+        if not os.path.exists("results/" + protocol_name):
+            os.makedirs("results/" + protocol_name)
         if protocol_name in protocol_list1:
             data_perturb = prot.perturb_data_list_sum_mp(data_list)
             data_estimate = prot.aggregate_data_list_sum(data_perturb, n)

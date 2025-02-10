@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
+import os
 
 # for PDF backend
 plt.rcParams['pdf.fonttype'] = 42
@@ -43,11 +44,11 @@ if __name__ == '__main__':
     style_list = {"GRR": "C0+-", "OUE": "C1s-", "RUE": "C2^-", "OLH": "C31-", "RLH": "C42-", "SS": "C5*-",
                   "RWS": "C6o-"}
 
-    # read the runtime in saved CSV result
-    x_syn, runtime_syn = read_result("results/synthetic_runtime.csv")
-    x_taxi, runtime_taxi = read_result("results/taxi_runtime.csv")
+    if not os.path.exists("draw"):
+        os.makedirs("draw")
 
     # plot figures
+    x_syn, runtime_syn = read_result("results/synthetic_runtime.csv")
     plt.figure(figsize=(3.5, 2.2))
     plt.ylabel("Aggregation Time(seconds)")
     plt.xlabel("Domain size d")
@@ -62,6 +63,7 @@ if __name__ == '__main__':
     plt.savefig("draw/runtime_syn.eps")
     plt.show()
 
+    x_taxi, runtime_taxi = read_result("results/taxi_runtime.csv")
     plt.figure(figsize=(3.5, 2.2))
     plt.ylabel("Aggregation Time(seconds)")
     plt.xlabel("Domain size d")

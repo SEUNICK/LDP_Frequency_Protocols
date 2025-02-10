@@ -8,6 +8,7 @@ from fp.RWS import RWS
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
+import os
 
 # for PDF backend
 plt.rcParams['pdf.fonttype'] = 42
@@ -60,6 +61,9 @@ if __name__ == '__main__':
     run_epsilon = 4.0
     run_d_range = np.array([2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096])
     run_protocol_list = np.array(["GRR", "OUE", "RUE", "OLH", "RLH", "SS", "RWS"])
+
+    if not os.path.exists("draw"):
+        os.makedirs("draw")
 
     # calculate the analytical n*MSE of LDP protocols
     ana_nMSE_d = {}

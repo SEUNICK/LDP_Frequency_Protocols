@@ -10,6 +10,7 @@ import math
 import csv
 import pyarrow.parquet as pq
 import timeit
+import os
 
 
 def generate_zipf_data(s, d, n):
@@ -111,11 +112,14 @@ def scan_d_runtime(data_name, epsilon, d_range, protocol_list):
     runtime_list = np.zeros((protocol_size, d_range.size), dtype='float64')
     for i in range(np.size(d_range)):
         data_list, data_list_sum = get_data_list(data_name, d_range[i])
+        print(data_name, "d:", d_range[i])
         for k in range(protocol_size):
             runtime = run_protocol_runtime(data_list, epsilon, d_range[i], protocol_list[k])
             runtime_list[k][i] = runtime
-            print(data_name, protocol_list[k], "d:", d_range[i], "runtime:", runtime)
+            print(protocol_list[k], "runtime:", runtime)
     path = "results/" + data_name + "_runtime.csv"
+    if not os.path.exists("results"):
+        os.makedirs("results")
     first_row = np.append(protocol_list, "d")
     write_csv(path, first_row, runtime_list, d_range)
     return 0
