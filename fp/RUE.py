@@ -29,7 +29,7 @@ class RUE:
     def perturb_data_list_sum_mp(self, data_list):
         """
         perturb with multiprocessing, i.e., split the data into cpu_count pieces and perturb each piece
-        the communication cost of OUE is high, here we directly calculate suggest number of each value to save memory
+        the communication cost of RUE is high, here we directly calculate suggest number of each value to save memory
         but this operation is indeed part of the job of aggregation
         to get the accurate aggregation time should use perturb_data_list_mp or perturb_data_list to get perturbed data
         """
@@ -54,7 +54,7 @@ class RUE:
     def perturb_data_list_mp(self, data_list):
         """
         perturb with multiprocessing, i.e., split the data into cpu_count pieces and perturb each piece
-        the communication cost of OUE is high, this function will cost a lot of memory
+        the communication cost of RUE is high, this function will cost a lot of memory
         the memory cost is about several MB to GB depending on the domain size and the number of data
         """
         data_list_chunk = np.array_split(data_list, self.cpu_count)
