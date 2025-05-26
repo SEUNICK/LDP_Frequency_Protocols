@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
     # plot figures
     plt.figure(figsize=(3.5, 2.2))
-    plt.ylabel("MSE)")
+    plt.ylabel("MSE")
     plt.xlabel("k")
     plt.yscale("log")
     for i in range(run_protocol_list.size):
@@ -86,7 +86,7 @@ if __name__ == '__main__':
     plt.show()
 
     plt.figure(figsize=(3.5, 2.2))
-    plt.ylabel("MSE)")
+    plt.ylabel("MSE")
     plt.xlabel("k")
     plt.yscale("log")
     for i in range(run_protocol_list.size):
